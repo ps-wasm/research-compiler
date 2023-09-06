@@ -1,0 +1,169 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.35.1.
+--
+-- see: https://github.com/sol/hpack
+
+name:           pswasm
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/ps-wasm#readme>
+homepage:       https://github.com/githubuser/pswasm#readme
+bug-reports:    https://github.com/githubuser/pswasm/issues
+author:         Author name here
+maintainer:     example@example.com
+copyright:      2023 Author name here
+license:        BSD3
+build-type:     Simple
+extra-source-files:
+    README.md
+    CHANGELOG.md
+data-files:
+    static/naive/runtime.wat
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/pswasm
+
+library
+  exposed-modules:
+      Common.CompileOptions
+      Common.Packager
+      Common.PureScriptUtility
+      Common.TypeClass
+      NaiveCompiler.IntermediateLambda
+      NaiveCompiler.Runtime
+      NaiveCompiler.WasmCompiler
+      Wasm.Printer
+      Wasm.Wasm
+  other-modules:
+      Paths_pswasm
+  hs-source-dirs:
+      src
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints
+  build-depends:
+      HUnit
+    , QuickCheck
+    , aeson
+    , base
+    , bytestring
+    , criterion
+    , directory
+    , filemanip
+    , filepath
+    , hspec
+    , hspec-contrib
+    , hspec-discover
+    , process
+    , purescript
+    , text
+  default-language: Haskell2010
+
+executable pswasm-3132bit
+  main-is: Main3132Bit.hs
+  other-modules:
+      Paths_pswasm
+  hs-source-dirs:
+      app
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N -main-is Main3132Bit
+  build-depends:
+      HUnit
+    , QuickCheck
+    , aeson
+    , base
+    , bytestring
+    , criterion
+    , directory
+    , filemanip
+    , filepath
+    , hspec
+    , hspec-contrib
+    , hspec-discover
+    , process
+    , pswasm
+    , purescript
+    , text
+  default-language: Haskell2010
+
+executable pswasm-32bit
+  main-is: Main32Bit.hs
+  other-modules:
+      Paths_pswasm
+  hs-source-dirs:
+      app
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N -main-is Main32Bit
+  build-depends:
+      HUnit
+    , QuickCheck
+    , aeson
+    , base
+    , bytestring
+    , criterion
+    , directory
+    , filemanip
+    , filepath
+    , hspec
+    , hspec-contrib
+    , hspec-discover
+    , process
+    , pswasm
+    , purescript
+    , text
+  default-language: Haskell2010
+
+executable pswasm-64bit
+  main-is: Main64Bit.hs
+  other-modules:
+      Paths_pswasm
+  hs-source-dirs:
+      app
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N -main-is Main64Bit
+  build-depends:
+      HUnit
+    , QuickCheck
+    , aeson
+    , base
+    , bytestring
+    , criterion
+    , directory
+    , filemanip
+    , filepath
+    , hspec
+    , hspec-contrib
+    , hspec-discover
+    , process
+    , pswasm
+    , purescript
+    , text
+  default-language: Haskell2010
+
+test-suite pswasm-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      CodeSize
+      CodeSizeBinary
+      CodeSizeSpec
+      PrinterSpec
+      PureScriptUtilitySpec
+      Paths_pswasm
+  hs-source-dirs:
+      test
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      HUnit
+    , QuickCheck
+    , aeson
+    , base
+    , bytestring
+    , criterion
+    , directory
+    , filemanip
+    , filepath
+    , hspec
+    , hspec-contrib
+    , hspec-discover
+    , process
+    , pswasm
+    , purescript
+    , text
+  default-language: Haskell2010
